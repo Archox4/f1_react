@@ -1,6 +1,6 @@
 # F1 educational project
-##<img width="1909" height="873" alt="image" src="https://github.com/user-attachments/assets/bc39dd5c-4f84-43e1-95cc-6282593e4dea" />
-##<img width="1905" height="834" alt="image" src="https://github.com/user-attachments/assets/59f50e2b-7fc1-4bd5-abb3-b90886b1cfb6" />
+## <img width="1909" height="873" alt="image" src="https://github.com/user-attachments/assets/bc39dd5c-4f84-43e1-95cc-6282593e4dea" />
+## <img width="1905" height="834" alt="image" src="https://github.com/user-attachments/assets/59f50e2b-7fc1-4bd5-abb3-b90886b1cfb6" />
 
 # React + TypeScript + Vite
 ## Libraries, versions:
