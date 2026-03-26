@@ -1,39 +1,18 @@
 import { useQuery } from "@tanstack/react-query"
 import LoadingDots from "./util/LoadingAnim"
 import baseApi from "./util/ApiConfig"
-import { useContext, useMemo, useState, useTransition } from "react"
+import { useMemo, useState, useTransition } from "react"
 import axios from "axios"
 import ErrorDisplay from "./util/ErrorDisplay"
+import type { Race } from "../interfaces/types"
+import { redirect, useNavigate } from "react-router-dom"
 
 export default function RaceList(){
-    
-    interface Session{
-        circuitShortName: string,
-        dateEnd: string,
-        dateStart: string,
-        id: number,
-        sessionName: string,
-        sessionType: string
-    };
-    interface Race{
-        circuitShortName: string,
-        countryCode: string,
-        countryFlag: string,
-        dateEnd: string,
-        dateStart: string,
-        id: number,
-        location: string,
-        meetingName: string,
-        meetingOfficialName: string,
-        sessions: Session[],
-        year: number
-    };
 
+    const navigate = useNavigate();
     const [year, setYear] = useState('2023');
     const [isSelectPending, startSelectTransition] = useTransition();
     const [isPopUp, setPopUp] = useState(false);
-
-    
 
     const {data, isPending, error} = useQuery<Race[]>({
         queryKey: [`races/${year}`],
@@ -53,12 +32,19 @@ export default function RaceList(){
         }
     };
 
-    const handleMeetingChange = (event: React.MouseEvent, data: Race) => {
+    const handleMeetingChange = (data: Race) => {
         setSelectedId(data.id);
         if(data != null){
             setPopUp(true);
         }
     };
+
+    const handleSessionClick = (session_key: number) => {
+        console.log(session_key);
+        if(session_key != null){
+            navigate(`/session/${session_key}`);
+        }
+    }
 
     if(axios.isAxiosError(error)){
         const status = error?.response?.status;
@@ -90,14 +76,14 @@ export default function RaceList(){
                             {selectedRace?.sessions.sort((a,b) => new Date(a.dateStart).getTime() - new Date(b.dateStart).getTime())
                             .map((session) => {
                                 return (
-                                <a key={session.id} href="/">
+                                <div key={session.id} onClick={() => handleSessionClick(session.id)}>
                                     <div className="flex flex-row m-1 p-2 hover:bg-dark-black rounded-2xl">
                                         <div className="flex-col">
                                             <p className="text-xl text-center w-80">{session.sessionName}</p>
                                             <p className="text-sm text-center w-80">{session.dateStart.split("T")[0]}</p>
                                         </div>
                                     </div>
-                                </a>)
+                                </div>)
                             })}
                         </div>
                     </div>
@@ -111,12 +97,12 @@ export default function RaceList(){
             <div className="flex flex-col mt-2">
                 {data?.map((race) => {
                     return (
-                        <a key={race.id} className="mt-2 cursor-pointer" onClick={(e) => handleMeetingChange(e, race)}>
+                        <div key={race.id} className="mt-2 cursor-pointer" onClick={() => handleMeetingChange(race)}>
                             <div className="flex flex-row justify-between items-center">
                                 <p>{race.meetingOfficialName}</p>
                                 <img src={race.countryFlag} alt={race.location} className="w-15 ml-5"/>
                             </div>
-                        </a> 
+                        </div> 
                     )
                 })}
             </div>
