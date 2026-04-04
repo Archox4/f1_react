@@ -5,7 +5,7 @@ import { useMemo, useState, useTransition } from "react"
 import axios from "axios"
 import ErrorDisplay from "./util/ErrorDisplay"
 import type { Race } from "../interfaces/types"
-import { redirect, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export default function RaceList(){
 
@@ -17,7 +17,8 @@ export default function RaceList(){
     const {data, isPending, error} = useQuery<Race[]>({
         queryKey: [`races/${year}`],
         queryFn: () => baseApi.get(`/races/year/${year}`).then(res => res.data),
-        refetchOnWindowFocus: false
+        refetchOnWindowFocus: false,
+        staleTime: 1000 * 60 * 5
     });
 
     const [selectedId, setSelectedId] = useState<number | null>(null);
@@ -75,9 +76,13 @@ export default function RaceList(){
                         <div className="flex flex-col mt-2 w-100">
                             {selectedRace?.sessions.sort((a,b) => new Date(a.dateStart).getTime() - new Date(b.dateStart).getTime())
                             .map((session) => {
+                                const isAvaible = session.sessionType === "Race"; 
+                                const disabledStyle = ["flex", "flex-row", "m-1", "p-2", 
+                                    isAvaible ? "hover:bg-dark-black" : "bg-gray-900", "rounded-2xl"].join(" ");
                                 return (
-                                <div key={session.id} onClick={() => handleSessionClick(session.id)}>
-                                    <div className="flex flex-row m-1 p-2 hover:bg-dark-black rounded-2xl">
+                                <div key={session.id} onClick={isAvaible ? () => handleSessionClick(session.id) : undefined}>
+                                    {/* <div className="flex flex-row m-1 p-2 hover:bg-dark-black rounded-2xl"> */}
+                                    <div className={disabledStyle}>
                                         <div className="flex-col">
                                             <p className="text-xl text-center w-80">{session.sessionName}</p>
                                             <p className="text-sm text-center w-80">{session.dateStart.split("T")[0]}</p>

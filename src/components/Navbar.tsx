@@ -10,7 +10,7 @@ function Navbar(){
 
     return (
     <>
-        <div className="mt-2 h-20 sticky top-0 bg-dark-black rounded-2xl flex flex-row flex-nowrap p-2 justify-between">
+        <div className="mt-2 z-30 h-20 sticky top-0 bg-dark-black rounded-2xl flex flex-row flex-nowrap p-2 justify-between">
             <div className="flex justify-center items-center flex-row ml-3 cursor-pointer" onClick={handleRedirect}>
                 <img src={logo} className='w-10 mr-2'/>
                 <h2>Formula 1 Data</h2>
