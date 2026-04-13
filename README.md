@@ -1,8 +1,10 @@
-# F1 educational project (not finished)
+<img width="1368" height="862" alt="image" src="https://github.com/user-attachments/assets/cdd05e55-4b0c-430d-ad29-c95cb7e1569f" /># F1 educational project (not finished)
 ### It is an unofficial project and is not associated in any way with the Formula 1 companies. F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trade marks of Formula One Licensing B.V.
 ### Data from [Open F1](https://openf1.org/docs/)
 ## <img width="1909" height="873" alt="image" src="https://github.com/user-attachments/assets/bc39dd5c-4f84-43e1-95cc-6282593e4dea" />
 ## <img width="1905" height="834" alt="image" src="https://github.com/user-attachments/assets/59f50e2b-7fc1-4bd5-abb3-b90886b1cfb6" />
+## <img width="1368" height="862" alt="image" src="https://github.com/user-attachments/assets/709f839a-f307-4e17-a580-2e0beabc64fa" />
+
 
 # React + TypeScript + Vite
 ## Libraries, versions:
