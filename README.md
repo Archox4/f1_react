@@ -32,4 +32,4 @@
 - typescript-eslint@8.56.1
 - typescript@5.9.3
 - vite-plugin-svgr@4.5.0
-└── vite@7.3.1
+- vite@7.3.1
