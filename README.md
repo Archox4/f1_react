@@ -6,7 +6,7 @@
  <img width="500" height="281" alt="image" src="https://github.com/user-attachments/assets/709f839a-f307-4e17-a580-2e0beabc64fa" />
  <img width="500" height="281" alt="image" src="https://github.com/user-attachments/assets/37cc1af2-ebd3-4ca6-8f48-9e37b9f19fa8" />
 
-### Project is using other project made in Java Spring. It is REST API used for syncing data from public API, saving in postgressql database and hosting data via rest controller 
+### Project is using [other project](https://github.com/Archox4/F1_API) made in Java Spring. It is REST API used for syncing data from public API, saving in postgressql database and hosting data via rest controller 
 
 # React + TypeScript + Vite
 ## Libraries, versions:
