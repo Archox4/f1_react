@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="20mm"
+   height="20mm"
+   viewBox="0 0 20 20"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="comp_unknown.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="8.1336326"
+     inkscape:cx="31.658671"
+     inkscape:cy="43.338569"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1">
+    <rect
+       x="19.179622"
+       y="22.868011"
+       width="50.530928"
+       height="48.194948"
+       id="rect1" />
+  </defs>
+  <ellipse
+     style="fill:none;stroke:#353535;stroke-width:2.4;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     id="path1"
+     cx="10"
+     cy="10"
+     rx="8.764658"
+     ry="8.7337656" />
+  <path
+     style="font-weight:bold;font-size:14.1111px;font-family:Dubai;-inkscape-font-specification:'Dubai Bold';fill:#353535;stroke-width:0.374;stroke-linejoin:round"
+     d="m 8.8993307,11.135944 q 0,-0.663221 0.2681109,-1.1712208 0.282222,-0.5221107 0.9736664,-1.0865548 0.465666,-0.3668886 0.634999,-0.6208884 0.183444,-0.2681109 0.183444,-0.564444 0,-0.3951108 -0.268111,-0.6067773 -0.253999,-0.2257776 -0.8043323,-0.2257776 -0.5079996,0 -1.0018881,0.2681109 Q 8.4054422,7.3823918 7.9679981,7.7916137 L 6.9237767,6.6062813 Q 7.4882207,5.999504 8.3489978,5.6185043 9.2097749,5.2375046 10.098774,5.2375046 q 0.860777,0 1.523999,0.2539998 0.677333,0.2539998 1.058333,0.7902216 0.39511,0.5362218 0.39511,1.3264434 0,0.6208884 -0.268111,1.0865547 -0.26811,0.4515552 -0.931332,0.9595549 -0.578555,0.451555 -0.818444,0.818444 -0.225778,0.366888 -0.225778,0.846666 v 0.183444 l -1.9332203,0.183444 z m 0.9595548,3.626553 q -0.3104442,0 -0.5785551,-0.155222 -0.2539998,-0.155222 -0.4092219,-0.409222 -0.1552221,-0.254 -0.1552221,-0.564444 0,-0.296333 0.1552221,-0.550333 0.1552221,-0.253999 0.4092219,-0.409222 0.2681109,-0.155222 0.5785551,-0.155222 0.2963335,0 0.5503325,0.155222 0.268111,0.155223 0.423333,0.409222 0.169334,0.254 0.169334,0.550333 0,0.310444 -0.155222,0.564444 -0.155223,0.254 -0.423333,0.409222 -0.268111,0.155222 -0.5644445,0.155222 z"
+     id="text1"
+     aria-label="?" />
+</svg>

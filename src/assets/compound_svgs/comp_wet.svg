@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="20mm"
+   height="20mm"
+   viewBox="0 0 20 20"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="comp_wet.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="8.1336326"
+     inkscape:cx="31.658671"
+     inkscape:cy="43.338569"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1">
+    <rect
+       x="19.179622"
+       y="22.868011"
+       width="50.530928"
+       height="48.194948"
+       id="rect1" />
+  </defs>
+  <ellipse
+     style="fill:none;stroke:#1270ff;stroke-width:2.4;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     id="path1"
+     cx="10"
+     cy="10"
+     rx="8.764658"
+     ry="8.7337656" />
+  <path
+     style="font-weight:bold;font-size:28.5364px;font-family:Dubai;-inkscape-font-specification:'Dubai Bold';white-space:pre;shape-padding:2.82776;fill:#1270ff;stroke-width:0.756327;stroke-linejoin:round"
+     d="m 47.9474,32.908014 v 0.228291 L 43.210358,51.399601 H 38.187951 L 35.905039,41.269179 q -0.399509,-1.683648 -0.71341,-4.080705 -0.3139,2.397057 -0.71341,4.080705 L 32.25238,51.399601 H 27.229974 L 22.464395,33.136305 v -0.228291 h 4.137778 l 2.368521,10.016276 q 0.199755,0.799019 0.428046,2.111694 0.228291,1.312674 0.39951,2.596812 0.456582,-2.939249 0.856092,-4.708506 l 2.339984,-10.016276 h 4.594361 l 2.282912,9.816521 q 0.513655,2.311449 0.913165,4.936797 0.171218,-1.198528 0.399509,-2.539739 0.256828,-1.341211 0.485119,-2.397058 l 2.197303,-9.816521 z"
+     id="text1"
+     transform="matrix(0.45051609,0,0,0.45051609,-5.8608183,-8.9909761)"
+     aria-label="W" />
+</svg>

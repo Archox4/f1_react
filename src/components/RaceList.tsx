@@ -41,7 +41,6 @@ export default function RaceList(){
     };
 
     const handleSessionClick = (session_key: number) => {
-        console.log(session_key);
         if(session_key != null){
             navigate(`/session/${session_key}`);
         }
@@ -62,8 +61,8 @@ export default function RaceList(){
             <div style={{ opacity: isSelectPending ? 0.5 : 1, transition: 'opacity 0.2s' }}></div>
             <select className="bg-dark-gray w-50 rounded-xl pr-2 h-8 text-center" value={year} onChange={handleYearChange}>
                 <option id="2023" className="bg-gray-900 rounded-2xl border-0">2023</option>
-                <option id="2024">2024</option>
-                <option id="2025">2025</option>
+                <option id="2024" disabled>2024</option>
+                <option id="2025" disabled>2025</option>
             </select>
             {isPopUp && (
                 <div className="fixed inset-0 z-50 flex justify-center items-center p-4">
@@ -81,7 +80,6 @@ export default function RaceList(){
                                     isAvaible ? "hover:bg-dark-black" : "bg-gray-900", "rounded-2xl"].join(" ");
                                 return (
                                 <div key={session.id} onClick={isAvaible ? () => handleSessionClick(session.id) : undefined}>
-                                    {/* <div className="flex flex-row m-1 p-2 hover:bg-dark-black rounded-2xl"> */}
                                     <div className={disabledStyle}>
                                         <div className="flex-col">
                                             <p className="text-xl text-center w-80">{session.sessionName}</p>

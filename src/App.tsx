@@ -1,7 +1,7 @@
 import './App.css'
 import RaceList from './components/RaceList'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import SessionPage from './SessionPage'
+import SessionPage from './components/SessionPage'
 import MainLayout from './components/MainLayout'
 
 function App() {

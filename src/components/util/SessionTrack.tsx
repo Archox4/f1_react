@@ -1,8 +1,9 @@
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef } from "react";
 import type { DetailedLapData } from "../../interfaces/types";
 import TrackLoader from "./TrackLoader";
+import CompoundLoader from "./CompoundLoader";
 
-const SessionTrack = ({lapData, selectedLap}: {lapData: DetailedLapData[], selectedLap: number}) => {
+const SessionTrack = ({lapData, selectedLap, circuitName}: {lapData: DetailedLapData[], selectedLap: number, circuitName: string | undefined}) => {
 
     const sortedLaps = useMemo(() => {
         if(lapData != undefined && lapData.length == 0) return[];
@@ -42,7 +43,7 @@ const SessionTrack = ({lapData, selectedLap}: {lapData: DetailedLapData[], selec
                             break;
                     }
                 })
-                tooltip.innerHTML = `<div class="font-bold min-w-2xs border-b bg-dark-gray mb-1">Sector ${id.charAt(1)} times</div>
+                tooltip.innerHTML = `<div class="font-bold min-w-2xs border-b mb-1">Sector ${id.charAt(1)} times</div>
                 ${sectorHTML}`;
             }
         } else{
@@ -51,28 +52,30 @@ const SessionTrack = ({lapData, selectedLap}: {lapData: DetailedLapData[], selec
         }
     }
 
+    if(circuitName === undefined){
+        return <p>Error loading track</p>
+    }
     return (
         <div className="m-2 p-2">
             {lapData?.length != 0 &&
                 <div className="flex flex-row justify-between">
-                    <TrackLoader circuitName="imola" lapData={lapData} selectedLap={selectedLap} 
+                    <TrackLoader circuitName={circuitName} lapData={lapData} selectedLap={selectedLap} 
                         onSectorHover={(id: string | null, centerX?: number, centerY?: number) => handleTrackHover(id, centerX, centerY)}/>
                     <div className="flex flex-col">
                         {sortedLaps != undefined && sortedLaps.length > 0 &&
-                            sortedLaps?.map((lap) => {
-                                return (<>
+                            sortedLaps?.map((lap, i) => {
+                                return (<div key={i} >
                                 {lap?.laps != undefined &&
-                                    <div className="mt-1 text-start">
-                                        <p>{lap.fullName} {lap.driverNumber}</p>
+                                    <div className="mt-1 text-start bg-slate-900 p-3 rounded-2xl">
+                                        <p><span style={{color: String("#"+lap.teamColour)}}>{lap.fullName} {lap.driverNumber}</span></p>
                                         {lap?.laps[selectedLap].isPitOutLap === "false" ? 
-                                            <p>{lap.laps[selectedLap].compound} {lap.laps[selectedLap].lapDuration}</p>
+                                            <p className="flex flex-row items-center justify-between"><CompoundLoader compound={lap.laps[selectedLap].compound}/> {lap.laps[selectedLap].lapDuration}</p>
                                             : 
-                                            <div>
-                                                <p>{lap.laps[selectedLap].lapDuration}</p>
-                                                <p>{lap.laps[selectedLap - 1].compound} {lap.laps[selectedLap].compound}</p>
+                                            <div className="flex flex-row items-center justify-around">
+                                                <CompoundLoader compound={lap.laps[selectedLap - 1].compound}/> {">>>"} <CompoundLoader compound={lap.laps[selectedLap].compound}/> <p>{lap.laps[selectedLap].lapDuration}</p>
                                             </div>}
                                     </div>}
-                                </>)
+                                </div>)
                         })}
                     </div>
                     <div ref={sectorTooltipRef} className="fixed hidden pointer-events-none bg-dark-gray text-white p-3 rounded shadow-xl z-50 text-xs"

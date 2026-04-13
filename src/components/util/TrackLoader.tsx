@@ -74,7 +74,8 @@ const TrackLoader: React.FC<TrackLoaderProps> = ({ circuitName, onSectorHover, l
 
     const getSectorId = (target: EventTarget | null): string | null => {
         if (!(target instanceof Element)) return null;
-        const sector = target.closest('path[id^="s"]') as SVGElement | null;
+        const sector = target.closest('[id^="s"]') as SVGElement | null;
+        //const sector = target.closest('path[id^="s"]') as SVGElement | null;
         if (!sector?.id) return null;
         return sector.id.startsWith('s') ? sector.id : null;
     };
@@ -85,7 +86,6 @@ const TrackLoader: React.FC<TrackLoaderProps> = ({ circuitName, onSectorHover, l
             const target = e.target as Element;
             const sector = target.closest('path[id^="s"]') as SVGPathElement | null;
             if(!sector) return;
-
             onSectorHover?.(id, e.clientX, e.clientY);
         } else{
             onSectorHover?.(null);

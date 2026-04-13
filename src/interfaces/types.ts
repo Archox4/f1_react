@@ -45,3 +45,18 @@
         isPitOutLap: string,
         tyreAgeAtStart: number
     }
+    export interface DetailedSession{
+        meetingName: string;
+        meetingOfficialName: string;
+        location: string;
+        countryCode: string;
+        countryFlag: string;
+        dateStart: string;
+        dateEnd: string;
+        year: number;
+        id: number;
+        sessionType: string;
+        sessionName: string;
+        circuitShortName: string;
+        meeting_key: number;
+    }
