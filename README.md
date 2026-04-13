@@ -9,7 +9,7 @@
 
 # React + TypeScript + Vite
 ## Libraries, versions:
-@eslint/js@9.39.3
+- @eslint/js@9.39.3
 - @headlessui/react@2.2.9
 - @tailwindcss/vite@4.2.2
 - @tanstack/react-query-devtools@5.95.2
