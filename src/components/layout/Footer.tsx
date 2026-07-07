@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
     return (
-        <footer className='bg-dark-black rounded-2xl mt-5 p-8 bottom-0'>
+        <footer className='bg-dark-black rounded-t-2xl lg:rounded-2xl mt-5 p-8 bottom-0'>
             <div >
                 <p >&copy; 2026 Formula 1 Educational Project.</p>
                 <p >Data source <a href='https://openf1.org/docs/' className='text-blue-600'>Open F1</a></p>

@@ -28,44 +28,41 @@ const TrackLoader: React.FC<TrackLoaderProps> = ({ circuitName, onSectorHover, l
         const s3 = wrapper.querySelector('#vs3') as SVGPathElement | null;
         if (!s1 || !s2 || !s3) return;
 
-        const comparedS1 = lapData[0]?.laps[selectedLap]?.durationSector1 ?? 900;
-        const comparedS2 = lapData[0].laps[selectedLap].durationSector2;
-        const comparedS3 = lapData[0].laps[selectedLap].durationSector3;
+        const referenceLap = lapData[0]?.laps?.[selectedLap];
+        const comparedS1 = referenceLap?.durationSector1 ?? null;
+        const comparedS2 = referenceLap?.durationSector2 ?? null;
+        const comparedS3 = referenceLap?.durationSector3 ?? null;
 
-        const s1Times: number[] = [];
-        const s2Times: number[] = [];
-        const s3Times: number[] = [];
-        for (let i = 1; i < lapData.length; i++) {
-            s1Times[i - 1] = lapData[i].laps[selectedLap].durationSector1;
-            s2Times[i - 1] = lapData[i].laps[selectedLap].durationSector2;
-            s3Times[i - 1] = lapData[i].laps[selectedLap].durationSector3;
+        const s1Times = lapData
+            .slice(1)
+            .map((lap) => lap.laps?.[selectedLap]?.durationSector1)
+            .filter((value): value is number => typeof value === 'number')
+        const s2Times = lapData
+            .slice(1)
+            .map((lap) => lap.laps?.[selectedLap]?.durationSector2)
+            .filter((value): value is number => typeof value === 'number')
+        const s3Times = lapData
+            .slice(1)
+            .map((lap) => lap.laps?.[selectedLap]?.durationSector3)
+            .filter((value): value is number => typeof value === 'number')
+
+        const getSectorColor = (
+            referenceValue: number | null,
+            values: number[]
+        ) => {
+            if (referenceValue === null || referenceValue === 0 || values.length === 0) {
+                return sectorGRAY
+            }
+            const minValue = Math.min(...values)
+            const maxValue = Math.max(...values)
+            if (referenceValue <= minValue) return sectorPURPLE
+            if (referenceValue >= maxValue) return sectorYELLOW
+            return sectorGREEN
         }
 
-        if (comparedS1 === 0.0) {
-            s1.style.stroke = sectorGRAY;
-        } else if (comparedS1 <= Math.min(...s1Times)) {
-            s1.style.stroke = sectorPURPLE;
-        } else if (comparedS1 >= Math.max(...s1Times)) {
-            s1.style.stroke = sectorYELLOW;
-        } else {
-            s1.style.stroke = sectorGREEN;
-        }
-
-        if (comparedS2 <= Math.min(...s2Times)) {
-            s2.style.stroke = sectorPURPLE;
-        } else if (comparedS2 >= Math.max(...s2Times)) {
-            s2.style.stroke = sectorYELLOW;
-        } else {
-            s2.style.stroke = sectorGREEN;
-        }
-
-        if (comparedS3 <= Math.min(...s3Times)) {
-            s3.style.stroke = sectorPURPLE;
-        } else if (comparedS3 >= Math.max(...s3Times)) {
-            s3.style.stroke = sectorYELLOW;
-        } else {
-            s3.style.stroke = sectorGREEN;
-        }
+        s1.style.stroke = getSectorColor(comparedS1, s1Times)
+        s2.style.stroke = getSectorColor(comparedS2, s2Times)
+        s3.style.stroke = getSectorColor(comparedS3, s3Times)
     }, [lapData, selectedLap]);
 
     if (!TrackComponent) {
@@ -91,7 +88,7 @@ const TrackLoader: React.FC<TrackLoaderProps> = ({ circuitName, onSectorHover, l
             onSectorHover?.(null);
         }
     };
-    const handleMouseOut = (e: React.MouseEvent<SVGSVGElement>) => {
+    const handleMouseOut = () => {
         onSectorHover?.(null);
     };
 

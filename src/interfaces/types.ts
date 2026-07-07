@@ -38,9 +38,9 @@
     export interface Lap{
         compound: string,
         lapNumber: number,
-        durationSector1: number,
-        durationSector2: number,
-        durationSector3: number,
+        durationSector1: number | null,
+        durationSector2: number | null,
+        durationSector3: number | null,
         lapDuration: number,
         isPitOutLap: string,
         tyreAgeAtStart: number
